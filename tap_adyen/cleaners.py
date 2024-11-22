@@ -85,7 +85,7 @@ def clean_row(row: dict, mapping: dict) -> dict:
 
         # Convert the value
         cleaned[new_mapping] = to_type_or_null(
-            row[key],
+            row.get(key),
             key_mapping.get('type'),
             key_mapping.get('null', True),
         )
